@@ -45,7 +45,7 @@ Follow these steps to get started with the projects:
 
     Install the required libraries as specified for each project.
 
-Components Required
+## Components Required
 
 Depending on the project, the following components may be required:
 
@@ -58,7 +58,7 @@ Depending on the project, the following components may be required:
     Jumper wires
     Breadboard (optional)
 
-Libraries Required
+## Libraries Required
 
 Each project may require specific libraries. Common libraries include:
 
@@ -68,48 +68,41 @@ Each project may require specific libraries. Common libraries include:
     LoRa (for LoRa projects)
     Wire (included with Arduino IDE for I2C communication)
 
-Usage
+## Usage
 
     Update the Wi-Fi credentials and any other necessary parameters in the code.
     Upload the code to your ESP8266 using the Arduino IDE.
     Monitor the Serial output for debugging and connection information.
     Access any web interfaces as specified in the project descriptions.
 
-Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
     Fork the repository.
     Create a new branch:
 
-    bash
-
 git checkout -b feature-branch
 
 Make your changes and commit them:
-
-bash
 
 git commit -m 'Add new feature'
 
 Push to the branch:
 
-bash
-
     git push origin feature-branch
 
     Create a pull request.
 
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgements
+
+## Acknowledgements
 
     ESP8266 Community
     Arduino
     Various contributors and resources that have helped in building these projects.
-
-sql
 
 
 Feel free to copy and paste this into your `README.md` file! Let me know if you need an
