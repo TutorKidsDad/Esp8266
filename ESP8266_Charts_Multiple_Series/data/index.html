@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESP8266 Sensor Data</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>ESP8266 Sensor Data</h1>
+  <canvas id="temperatureChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('temperatureChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [],  // Time labels for X-axis
+        datasets: [{
+          label: 'Sensor 1',
+          data: [],
+          borderColor: 'red',
+          fill: false
+        }, {
+          label: 'Sensor 2',
+          data: [],
+          borderColor: 'green',
+          fill: false
+        }, {
+          label: 'Sensor 3',
+          data: [],
+          borderColor: 'blue',
+          fill: false
+        }, {
+          label: 'Sensor 4',
+          data: [],
+          borderColor: 'orange',
+          fill: false
+        }]
+      }
+    });
+
+    // Fetch sensor data and update chart
+    async function fetchData() {
+      const response = await fetch('/readings');
+      const data = await response.json();
+      
+      const currentTime = new Date().toLocaleTimeString();
+
+      chart.data.labels.push(currentTime);  // Add time to labels
+      chart.data.datasets[0].data.push(data.sensor1);
+      chart.data.datasets[1].data.push(data.sensor2);
+      chart.data.datasets[2].data.push(data.sensor3);
+      chart.data.datasets[3].data.push(data.sensor4);
+
+      if (chart.data.labels.length > 10) {
+        chart.data.labels.shift();  // Remove first element if there are more than 10 readings
+        chart.data.datasets.forEach((dataset) => {
+          dataset.data.shift();  // Keep only the last 10 readings
+        });
+      }
+
+      chart.update();
+    }
+
+    setInterval(fetchData, 10000);  // Update every 10 seconds
+  </script>
+</body>
+</html>
+
