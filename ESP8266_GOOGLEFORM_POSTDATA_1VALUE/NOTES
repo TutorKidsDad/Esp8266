@@ -1,0 +1,11 @@
+http://baxter.yazbek.com/?p=91
+------------
+
+EDIT TO CORRECT
+
+client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+           "Host: " + host + "\r\n" + 
+           "Connection: close\r\n\r\n");
+-------------------------
+PUT XXX.php at
+http://onlinetps.com/store/XXX.php
