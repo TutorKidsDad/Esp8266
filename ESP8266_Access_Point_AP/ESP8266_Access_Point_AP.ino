@@ -20,7 +20,7 @@ Edited by Swapnil Karambelkar
 const char* ssid     = "ESP8266-Access-Point";
 const char* password = "123456789";
 
-#define DHTPIN 5     // Digital pin connected to the DHT sensor
+#define DHTPIN 4     // Digital pin connected to the DHT sensor
 
 // Uncomment the type of sensor in use:
 //#define DHTTYPE    DHT11     // DHT 11
